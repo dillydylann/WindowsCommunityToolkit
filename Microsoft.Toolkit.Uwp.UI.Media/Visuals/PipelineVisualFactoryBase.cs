@@ -16,7 +16,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
     public abstract class PipelineVisualFactoryBase : AttachedVisualFactoryBase
     {
         /// <inheritdoc/>
-        public override async ValueTask<Visual> GetAttachedVisualAsync(UIElement element)
+        public override async Task<Visual> GetAttachedVisualAsync(UIElement element)
         {
             var visual = ElementCompositionPreview.GetElementVisual(element).Compositor.CreateSpriteVisual();
 

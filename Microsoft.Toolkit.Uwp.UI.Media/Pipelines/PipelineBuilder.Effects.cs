@@ -40,7 +40,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder Blur(float blur, EffectBorderMode mode = EffectBorderMode.Hard, EffectOptimization optimization = EffectOptimization.Balanced)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new GaussianBlurEffect
+            async Task<IGraphicsEffectSource> Factory() => new GaussianBlurEffect
             {
                 BlurAmount = blur,
                 BorderMode = mode,
@@ -64,7 +64,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new GaussianBlurEffect
+            async Task<IGraphicsEffectSource> Factory() => new GaussianBlurEffect
             {
                 BlurAmount = blur,
                 BorderMode = mode,
@@ -91,7 +91,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new GaussianBlurEffect
+            async Task<IGraphicsEffectSource> Factory() => new GaussianBlurEffect
             {
                 BlurAmount = blur,
                 BorderMode = mode,
@@ -113,7 +113,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder Saturation(float saturation)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasSaturationEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasSaturationEffect
             {
                 Saturation = saturation,
                 Source = await this.sourceProducer()
@@ -133,7 +133,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasSaturationEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasSaturationEffect
             {
                 Saturation = saturation,
                 Source = await this.sourceProducer(),
@@ -156,7 +156,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasSaturationEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasSaturationEffect
             {
                 Saturation = saturation,
                 Source = await this.sourceProducer(),
@@ -176,7 +176,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder Sepia(float intensity)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasSepiaEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasSepiaEffect
             {
                 Intensity = intensity,
                 Source = await this.sourceProducer()
@@ -196,7 +196,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasSepiaEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasSepiaEffect
             {
                 Intensity = intensity,
                 Source = await this.sourceProducer(),
@@ -219,7 +219,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasSepiaEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasSepiaEffect
             {
                 Intensity = intensity,
                 Source = await this.sourceProducer(),
@@ -239,7 +239,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder Opacity(float opacity)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasOpacityEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasOpacityEffect
             {
                 Opacity = opacity,
                 Source = await this.sourceProducer()
@@ -259,7 +259,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasOpacityEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasOpacityEffect
             {
                 Opacity = opacity,
                 Source = await this.sourceProducer(),
@@ -282,7 +282,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasOpacityEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasOpacityEffect
             {
                 Opacity = opacity,
                 Source = await this.sourceProducer(),
@@ -302,7 +302,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder Exposure(float amount)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasExposureEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasExposureEffect
             {
                 Exposure = amount,
                 Source = await this.sourceProducer()
@@ -322,7 +322,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasExposureEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasExposureEffect
             {
                 Exposure = amount,
                 Source = await this.sourceProducer(),
@@ -345,7 +345,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasExposureEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasExposureEffect
             {
                 Exposure = amount,
                 Source = await this.sourceProducer(),
@@ -365,7 +365,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder HueRotation(float angle)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasHueRotationEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasHueRotationEffect
             {
                 Angle = angle,
                 Source = await this.sourceProducer()
@@ -385,7 +385,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasHueRotationEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasHueRotationEffect
             {
                 Angle = angle,
                 Source = await this.sourceProducer(),
@@ -408,7 +408,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasHueRotationEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasHueRotationEffect
             {
                 Angle = angle,
                 Source = await this.sourceProducer(),
@@ -428,7 +428,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder Tint(Color color)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasTintEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasTintEffect
             {
                 Color = color,
                 Source = await this.sourceProducer()
@@ -448,7 +448,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasTintEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasTintEffect
             {
                 Color = color,
                 Source = await this.sourceProducer(),
@@ -471,7 +471,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasTintEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasTintEffect
             {
                 Color = color,
                 Source = await this.sourceProducer(),
@@ -492,7 +492,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder TemperatureAndTint(float temperature, float tint)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasTemperatureAndTintEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasTemperatureAndTintEffect
             {
                 Temperature = temperature,
                 Tint = tint,
@@ -519,7 +519,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasTemperatureAndTintEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasTemperatureAndTintEffect
             {
                 Temperature = temperature,
                 Tint = tint,
@@ -551,7 +551,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasTemperatureAndTintEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasTemperatureAndTintEffect
             {
                 Temperature = temperature,
                 Tint = tint,
@@ -621,7 +621,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder LuminanceToAlpha()
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasLuminanceToAlphaEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasLuminanceToAlphaEffect
             {
                 Source = await this.sourceProducer()
             };
@@ -636,7 +636,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder Invert()
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasInvertEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasInvertEffect
             {
                 Source = await this.sourceProducer()
             };
@@ -651,7 +651,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder Grayscale()
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasGrayscaleEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasGrayscaleEffect
             {
                 Source = await this.sourceProducer()
             };
@@ -672,7 +672,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
             IEnumerable<string> animations = null,
             IEnumerable<BrushProvider> initializers = null)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => factory(await this.sourceProducer());
+            async Task<IGraphicsEffectSource> Factory() => factory(await this.sourceProducer());
 
             return new PipelineBuilder(this, Factory, animations?.ToArray(), initializers?.ToDictionary(item => item.Name, item => item.Initializer));
         }
@@ -690,7 +690,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
             IEnumerable<string> animations = null,
             IEnumerable<BrushProvider> initializers = null)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => await factory(await this.sourceProducer());
+            async Task<IGraphicsEffectSource> Factory() => await factory(await this.sourceProducer());
 
             return new PipelineBuilder(this, Factory, animations?.ToArray(), initializers?.ToDictionary(item => item.Name, item => item.Initializer));
         }

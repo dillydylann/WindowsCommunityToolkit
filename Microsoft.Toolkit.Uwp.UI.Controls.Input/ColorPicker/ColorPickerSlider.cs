@@ -85,7 +85,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls.Primitives
                 {
                     case ColorChannel.Channel1:
                     {
-                        var channelValue = Math.Clamp(sliderPercent * 360.0, 0.0, 360.0);
+                        var channelValue = MathEx.Clamp(sliderPercent * 360.0, 0.0, 360.0);
 
                         hsvColor = new HsvColor()
                         {
@@ -99,7 +99,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls.Primitives
 
                     case ColorChannel.Channel2:
                     {
-                        var channelValue = Math.Clamp(sliderPercent * 1.0, 0.0, 1.0);
+                        var channelValue = MathEx.Clamp(sliderPercent * 1.0, 0.0, 1.0);
 
                         hsvColor = new HsvColor()
                         {
@@ -113,7 +113,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls.Primitives
 
                     case ColorChannel.Channel3:
                     {
-                        var channelValue = Math.Clamp(sliderPercent * 1.0, 0.0, 1.0);
+                        var channelValue = MathEx.Clamp(sliderPercent * 1.0, 0.0, 1.0);
 
                         hsvColor = new HsvColor()
                         {
@@ -146,7 +146,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls.Primitives
                     };
                 }
 
-                byte channelValue = Convert.ToByte(Math.Clamp(sliderPercent * 255.0, 0.0, 255.0));
+                byte channelValue = Convert.ToByte(MathEx.Clamp(sliderPercent * 255.0, 0.0, 255.0));
 
                 switch (this.ColorChannel)
                 {

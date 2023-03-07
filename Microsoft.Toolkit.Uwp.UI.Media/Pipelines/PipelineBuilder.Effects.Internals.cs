@@ -44,7 +44,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
 
             target = $"{name}.{nameof(GaussianBlurEffect.BlurAmount)}";
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new GaussianBlurEffect
+            async Task<IGraphicsEffectSource> Factory() => new GaussianBlurEffect
             {
                 BlurAmount = blur,
                 BorderMode = mode,
@@ -70,7 +70,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
 
             target = $"{id}.{nameof(CanvasCrossFadeEffect.CrossFade)}";
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasCrossFadeEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasCrossFadeEffect
             {
                 CrossFade = factor,
                 Source1 = await this.sourceProducer(),
@@ -94,7 +94,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
 
             target = $"{id}.{nameof(CanvasExposureEffect.Exposure)}";
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasExposureEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasExposureEffect
             {
                 Exposure = amount,
                 Source = await this.sourceProducer(),
@@ -117,7 +117,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
 
             target = $"{id}.{nameof(CanvasHueRotationEffect.Angle)}";
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasHueRotationEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasHueRotationEffect
             {
                 Angle = angle,
                 Source = await this.sourceProducer(),
@@ -140,7 +140,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
 
             target = $"{id}.{nameof(CanvasOpacityEffect.Opacity)}";
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasOpacityEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasOpacityEffect
             {
                 Opacity = opacity,
                 Source = await this.sourceProducer(),
@@ -163,7 +163,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
 
             target = $"{id}.{nameof(CanvasSaturationEffect.Saturation)}";
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasSaturationEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasSaturationEffect
             {
                 Saturation = saturation,
                 Source = await this.sourceProducer(),
@@ -186,7 +186,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
 
             target = $"{id}.{nameof(CanvasSepiaEffect.Intensity)}";
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasSepiaEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasSepiaEffect
             {
                 Intensity = intensity,
                 Source = await this.sourceProducer(),
@@ -209,7 +209,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
 
             target = $"{id}.{nameof(CanvasTintEffect.Color)}";
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasTintEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasTintEffect
             {
                 Color = color,
                 Source = await this.sourceProducer(),

@@ -237,7 +237,11 @@ namespace Microsoft.Toolkit.Uwp
                             throw t.Exception;
                         }
 
+#if NETFRAMEWORK
+                        if (t.Status == TaskStatus.RanToCompletion)
+#else
                         if (t.IsCompletedSuccessfully)
+#endif
                         {
                             CurrentPageIndex += 1;
                         }

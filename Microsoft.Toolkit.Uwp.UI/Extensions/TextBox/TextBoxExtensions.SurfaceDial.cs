@@ -108,7 +108,7 @@ namespace Microsoft.Toolkit.Uwp.UI
 
                 if (options.EnableMinMaxValue)
                 {
-                    number = Math.Clamp(number, options.MinValue, options.MaxValue);
+                    number = MathEx.Clamp(number, options.MinValue, options.MaxValue);
                 }
             }
             else

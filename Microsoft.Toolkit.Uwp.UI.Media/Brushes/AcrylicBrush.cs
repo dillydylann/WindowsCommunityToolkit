@@ -137,7 +137,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
         public double TintOpacity
         {
             get => (double)GetValue(TintOpacityProperty);
-            set => SetValue(TintOpacityProperty, Math.Clamp(value, 0, 1));
+            set => SetValue(TintOpacityProperty, MathEx.Clamp(value, 0, 1));
         }
 
         /// <summary>

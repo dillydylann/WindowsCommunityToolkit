@@ -18,6 +18,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
         /// </summary>
         /// <param name="element">The target <see cref="UIElement"/> the visual will be attached to.</param>
         /// <returns>A <see cref="Visual"/> instance that the caller will attach to the target element.</returns>
-        public abstract ValueTask<Visual> GetAttachedVisualAsync(UIElement element);
+        public abstract Task<Visual> GetAttachedVisualAsync(UIElement element);
     }
 }

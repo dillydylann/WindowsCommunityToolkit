@@ -115,7 +115,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             {
                 foreach (var token in tokens)
                 {
-                    _tokens.TryAdd($"\"{token.Id}\"", token);
+                    _tokens[$"\"{token.Id}\""] = token;
                 }
             }
         }

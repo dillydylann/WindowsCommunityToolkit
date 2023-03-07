@@ -52,7 +52,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
             new PropertyMetadata(null));
 
         /// <inheritdoc/>
-        public override async ValueTask<Visual> GetAttachedVisualAsync(UIElement element)
+        public override async Task<Visual> GetAttachedVisualAsync(UIElement element)
         {
             var visual = (SpriteVisual)await base.GetAttachedVisualAsync(element);
 

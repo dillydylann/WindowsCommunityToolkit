@@ -168,8 +168,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             int shadeIndex)
         {
             return colorChart[
-                Math.Clamp(colorIndex, 0, colorChart.GetLength(0)),
-                Math.Clamp(shadeIndex, 0, colorChart.GetLength(1))];
+                MathEx.Clamp(colorIndex, 0, colorChart.GetLength(0)),
+                MathEx.Clamp(shadeIndex, 0, colorChart.GetLength(1))];
         }
     }
 }

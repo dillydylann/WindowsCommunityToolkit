@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using System;
 using System.Collections.Generic;
 using Windows.Foundation;
 using Windows.System;
@@ -211,7 +212,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             {
                 bool lastDelimited = t[t.Length - 1] == Owner.TokenDelimiter[0];
 
-                string[] tokens = t.Split(Owner.TokenDelimiter);
+                string[] tokens = t.Split(new[] { Owner.TokenDelimiter }, StringSplitOptions.None);
                 int numberToProcess = lastDelimited ? tokens.Length : tokens.Length - 1;
                 for (int position = 0; position < numberToProcess; position++)
                 {

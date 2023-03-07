@@ -16,6 +16,7 @@ using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Devices.Enumeration;
 using Windows.System;
 using Windows.UI.Xaml.Media.Imaging;
+using DispatcherQueuePriority = Windows.System.DispatcherQueuePriority;
 
 namespace Microsoft.Toolkit.Uwp.Connectivity
 {

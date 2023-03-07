@@ -295,7 +295,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                             {
                                 // Sweep hue
                                 newRgbColor = Uwp.Helpers.ColorHelper.FromHsv(
-                                    Math.Clamp(channelValue, 0.0, 360.0),
+                                    MathEx.Clamp(channelValue, 0.0, 360.0),
                                     baseHsvColor.S,
                                     baseHsvColor.V,
                                     baseHsvColor.A);
@@ -305,7 +305,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                                 // Sweep red
                                 newRgbColor = new Color
                                 {
-                                    R = Convert.ToByte(Math.Clamp(channelValue, 0.0, 255.0)),
+                                    R = Convert.ToByte(MathEx.Clamp(channelValue, 0.0, 255.0)),
                                     G = baseRgbColor.G,
                                     B = baseRgbColor.B,
                                     A = baseRgbColor.A
@@ -322,7 +322,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                                 // Sweep saturation
                                 newRgbColor = Uwp.Helpers.ColorHelper.FromHsv(
                                     baseHsvColor.H,
-                                    Math.Clamp(channelValue, 0.0, 1.0),
+                                    MathEx.Clamp(channelValue, 0.0, 1.0),
                                     baseHsvColor.V,
                                     baseHsvColor.A);
                             }
@@ -332,7 +332,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                                 newRgbColor = new Color
                                 {
                                     R = baseRgbColor.R,
-                                    G = Convert.ToByte(Math.Clamp(channelValue, 0.0, 255.0)),
+                                    G = Convert.ToByte(MathEx.Clamp(channelValue, 0.0, 255.0)),
                                     B = baseRgbColor.B,
                                     A = baseRgbColor.A
                                 };
@@ -349,7 +349,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                                 newRgbColor = Uwp.Helpers.ColorHelper.FromHsv(
                                     baseHsvColor.H,
                                     baseHsvColor.S,
-                                    Math.Clamp(channelValue, 0.0, 1.0),
+                                    MathEx.Clamp(channelValue, 0.0, 1.0),
                                     baseHsvColor.A);
                             }
                             else
@@ -359,7 +359,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                                 {
                                     R = baseRgbColor.R,
                                     G = baseRgbColor.G,
-                                    B = Convert.ToByte(Math.Clamp(channelValue, 0.0, 255.0)),
+                                    B = Convert.ToByte(MathEx.Clamp(channelValue, 0.0, 255.0)),
                                     A = baseRgbColor.A
                                 };
                             }
@@ -376,7 +376,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                                     baseHsvColor.H,
                                     baseHsvColor.S,
                                     baseHsvColor.V,
-                                    Math.Clamp(channelValue, 0.0, 1.0));
+                                    MathEx.Clamp(channelValue, 0.0, 1.0));
                             }
                             else
                             {
@@ -386,7 +386,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                                     R = baseRgbColor.R,
                                     G = baseRgbColor.G,
                                     B = baseRgbColor.B,
-                                    A = Convert.ToByte(Math.Clamp(channelValue, 0.0, 255.0))
+                                    A = Convert.ToByte(MathEx.Clamp(channelValue, 0.0, 255.0))
                                 };
                             }
 

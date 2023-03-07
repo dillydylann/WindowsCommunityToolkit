@@ -23,7 +23,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
         public double Value
         {
             get => this.value;
-            set => this.value = Math.Clamp(value, 0, 1);
+            set => this.value = MathEx.Clamp(value, 0, 1);
         }
 
         /// <summary>

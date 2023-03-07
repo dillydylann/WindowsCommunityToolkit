@@ -47,7 +47,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
         public double TintOpacity
         {
             get => this.tintOpacity;
-            set => this.tintOpacity = Math.Clamp(value, 0, 1);
+            set => this.tintOpacity = MathEx.Clamp(value, 0, 1);
         }
 
         /// <summary>

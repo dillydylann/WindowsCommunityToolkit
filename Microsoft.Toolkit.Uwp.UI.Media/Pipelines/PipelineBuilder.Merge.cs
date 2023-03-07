@@ -38,7 +38,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
                 _ => throw new ArgumentException($"Invalid placement value: {placement}")
             };
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasBlendEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasBlendEffect
             {
                 Foreground = await foreground.sourceProducer(),
                 Background = await background.sourceProducer(),
@@ -57,7 +57,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         [Pure]
         public PipelineBuilder CrossFade(PipelineBuilder pipeline, float factor = 0.5f)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasCrossFadeEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasCrossFadeEffect
             {
                 CrossFade = factor,
                 Source1 = await this.sourceProducer(),
@@ -79,7 +79,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasCrossFadeEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasCrossFadeEffect
             {
                 CrossFade = factor,
                 Source1 = await this.sourceProducer(),
@@ -104,7 +104,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
         {
             string id = Guid.NewGuid().ToUppercaseAsciiLetters();
 
-            async ValueTask<IGraphicsEffectSource> Factory() => new CanvasCrossFadeEffect
+            async Task<IGraphicsEffectSource> Factory() => new CanvasCrossFadeEffect
             {
                 CrossFade = factor,
                 Source1 = await this.sourceProducer(),
@@ -132,7 +132,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
             IEnumerable<string> animations = null,
             IEnumerable<BrushProvider> initializers = null)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => factory(await this.sourceProducer(), await background.sourceProducer());
+            async Task<IGraphicsEffectSource> Factory() => factory(await this.sourceProducer(), await background.sourceProducer());
 
             return new PipelineBuilder(Factory, this, background, animations?.ToArray(), initializers?.ToDictionary(item => item.Name, item => item.Initializer));
         }
@@ -152,7 +152,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media.Pipelines
             IEnumerable<string> animations = null,
             IEnumerable<BrushProvider> initializers = null)
         {
-            async ValueTask<IGraphicsEffectSource> Factory() => await factory(await this.sourceProducer(), await background.sourceProducer());
+            async Task<IGraphicsEffectSource> Factory() => await factory(await this.sourceProducer(), await background.sourceProducer());
 
             return new PipelineBuilder(Factory, this, background, animations?.ToArray(), initializers?.ToDictionary(item => item.Name, item => item.Initializer));
         }

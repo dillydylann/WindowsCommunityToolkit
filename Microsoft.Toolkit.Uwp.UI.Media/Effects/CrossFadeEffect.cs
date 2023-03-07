@@ -37,7 +37,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
         public double Factor
         {
             get => this.factor;
-            set => this.factor = Math.Clamp(value, 0, 1);
+            set => this.factor = MathEx.Clamp(value, 0, 1);
         }
 
         /// <summary>

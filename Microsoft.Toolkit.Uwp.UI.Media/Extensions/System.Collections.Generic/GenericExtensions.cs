@@ -32,7 +32,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
                 throw new InvalidOperationException($"The key {key} already exists in the current pipeline");
             }
 
-            return new Dictionary<TKey, TValue>(a.Concat(b));
+            return new Dictionary<TKey, TValue>(a.Concat(b).ToDictionary(x => x.Key, x => x.Value));
         }
 
         /// <summary>

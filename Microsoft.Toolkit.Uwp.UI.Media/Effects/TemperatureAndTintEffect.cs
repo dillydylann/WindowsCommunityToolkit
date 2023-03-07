@@ -21,7 +21,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
         public double Temperature
         {
             get => this.temperature;
-            set => this.temperature = Math.Clamp(value, -1, 1);
+            set => this.temperature = MathEx.Clamp(value, -1, 1);
         }
 
         private double tint;
@@ -32,7 +32,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
         public double Tint
         {
             get => this.tint;
-            set => this.tint = Math.Clamp(value, -1, 1);
+            set => this.tint = MathEx.Clamp(value, -1, 1);
         }
 
         /// <inheritdoc/>

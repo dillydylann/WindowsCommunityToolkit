@@ -26,7 +26,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Media
         public double Intensity
         {
             get => this.intensity;
-            set => this.intensity = Math.Clamp(value, 0, 1);
+            set => this.intensity = MathEx.Clamp(value, 0, 1);
         }
 
         /// <inheritdoc/>

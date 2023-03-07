@@ -98,7 +98,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Animations
 
             CancellationTokenSource cancellationTokenSource = new();
 
-            this.cancellationTokenMap.AddOrUpdate(element, cancellationTokenSource);
+            this.cancellationTokenMap.Remove(element);
+            this.cancellationTokenMap.Add(element, cancellationTokenSource);
 
             return StartAsync(element, cancellationTokenSource.Token);
         }

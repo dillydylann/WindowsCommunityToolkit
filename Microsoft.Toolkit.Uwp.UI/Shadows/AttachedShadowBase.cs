@@ -4,6 +4,7 @@
 
 using System.Collections.Generic;
 using System.Numerics;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using Windows.Foundation;
 using Windows.Foundation.Metadata;
@@ -176,10 +177,20 @@ namespace Microsoft.Toolkit.Uwp.UI
         {
             if (ShadowElementContextTable != null)
             {
+#if NETFRAMEWORK
+                // FIXME: Confirm if this works or not...
+                foreach (var value in ShadowElementContextTable.GetType()
+                    .GetProperty("Values", BindingFlags.Instance | BindingFlags.NonPublic)
+                    .GetValue(ShadowElementContextTable, null) as ICollection<AttachedShadowElementContext>)
+                {
+                    yield return value;
+                }
+#else
                 foreach (var kvp in ShadowElementContextTable)
                 {
                     yield return kvp.Value;
                 }
+#endif
             }
         }
 
@@ -199,6 +210,18 @@ namespace Microsoft.Toolkit.Uwp.UI
                 return;
             }
 
+#if NETFRAMEWORK
+            // FIXME: Confirm if this works or not...
+            foreach (var value in ShadowElementContextTable.GetType()
+                .GetProperty("Values", BindingFlags.Instance | BindingFlags.NonPublic)
+                .GetValue(ShadowElementContextTable, null) as ICollection<AttachedShadowElementContext>)
+            {
+                if (value.IsInitialized)
+                {
+                    OnPropertyChanged(value, property, oldValue, newValue);
+                }
+            }
+#else
             foreach (var context in ShadowElementContextTable)
             {
                 if (context.Value.IsInitialized)
@@ -206,6 +229,7 @@ namespace Microsoft.Toolkit.Uwp.UI
                     OnPropertyChanged(context.Value, property, oldValue, newValue);
                 }
             }
+#endif
         }
 
         /// <summary>
